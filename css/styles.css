@@ -749,9 +749,88 @@ textarea {
   }
 }
 
+.btn,
+.flow-tab,
+.journey-nav button,
+.faq-item button,
+.audience-nav button,
+.nav-toggle {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.btn:hover,
+.flow-tab:hover,
+.journey-nav button:hover,
+.audience-nav button:hover,
+.nav-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active,
+.flow-tab:active,
+.journey-nav button:active,
+.faq-item button:active,
+.audience-nav button:active,
+.nav-toggle:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn:focus-visible,
+.flow-tab:focus-visible,
+.journey-nav button:focus-visible,
+.faq-item button:focus-visible,
+.audience-nav button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #8ec5ff;
+  outline-offset: 2px;
+}
+
+.audience {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.audience-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.audience-nav button {
+  border: 1px solid var(--line);
+  background: #f8fbff;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.audience-nav button.is-active {
+  background: var(--amber);
+  border-color: var(--amber-deep);
+}
+
+.audience-panel {
+  margin: 0 0 18px;
+  color: var(--muted);
+  min-height: 3.2rem;
+  font-size: 1.05rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
+  .reveal,
+  .btn,
+  .flow-tab,
+  .journey-nav button,
+  .card-hit {
+    transition: none;
     transform: none;
   }
 }

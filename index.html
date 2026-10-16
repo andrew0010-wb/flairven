@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css?v=6" />
+    <link rel="stylesheet" href="/css/styles.css?v=7" />
   </head>
   <body data-page="index.html">
     <div id="site-header"></div>
@@ -44,7 +44,7 @@
                 <span>Primer flujo en producción</span>
               </div>
               <div class="stat">
-                <strong>100%</strong>
+                <strong data-count="100" data-suffix="%">0%</strong>
                 <span>Activos en tu cuenta</span>
               </div>
             </div>
@@ -70,6 +70,23 @@
         <div class="container logo-bar-inner">
           <span>n8n</span><span>Make</span><span>Zapier</span><span>HubSpot</span>
           <span>Google Workspace</span><span>Slack</span><span>OpenAI</span><span>APIs</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header reveal">
+          <span class="kicker">Para quién</span>
+          <h2>Elige la situación que más se parece a la tuya</h2>
+          <p>Pulsa una opción y verás qué automatizaríamos primero.</p>
+        </div>
+        <div class="audience reveal" data-audience>
+          <div class="audience-nav">
+            <button type="button" class="is-active" data-audience-key="ventas" aria-pressed="true">Ventas</button>
+            <button type="button" data-audience-key="soporte" aria-pressed="false">Soporte</button>
+            <button type="button" data-audience-key="finanzas" aria-pressed="false">Finanzas</button>
+          </div>
+          <p class="audience-panel" data-audience-panel></p>
+          <a class="btn btn-primary" href="/contacto.html">Quiero este tipo de flujo</a>
         </div>
       </section>
 
@@ -159,8 +176,8 @@
     </main>
 
     <div id="site-footer"></div>
-    <script src="/js/site-config.js?v=6"></script>
-    <script src="/js/layout.js?v=6"></script>
-    <script src="/js/main.js?v=6"></script>
+    <script src="/js/site-config.js?v=7"></script>
+    <script src="/js/layout.js?v=7"></script>
+    <script src="/js/main.js?v=7"></script>
   </body>
 </html>

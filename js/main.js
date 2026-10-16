@@ -4,9 +4,15 @@
     var nav = document.querySelector(".nav");
     if (!toggle || !nav) return;
     toggle.onclick = function () {
-      nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", nav.classList.contains("is-open"));
+      var open = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
     };
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
   }
   bindNav();
   var headerRoot = document.getElementById("site-header");
@@ -58,9 +64,11 @@
         if (!entries[0].isIntersecting || done) return;
         done = true;
         var start = performance.now();
+        var duration = 3600;
         function tick(now) {
-          var p = Math.min((now - start) / 1200, 1);
-          el.textContent = prefix + Math.round(target * p) + suffix;
+          var p = Math.min((now - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + Math.round(target * eased) + suffix;
           if (p < 1) requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);
@@ -173,6 +181,31 @@
     showJourney(0);
   }
 
+  var audience = document.querySelector("[data-audience]");
+  if (audience) {
+    var profiles = {
+      ventas: "Conectamos formularios, CRM y WhatsApp para que ningún lead se quede sin seguimiento.",
+      soporte: "Clasificamos tickets, asignamos al equipo correcto y dejamos una primera respuesta lista.",
+      finanzas: "Pasamos pedidos, facturas y conciliaciones a un flujo con alertas cuando algo no cuadra.",
+    };
+    var audiencePanel = audience.querySelector("[data-audience-panel]");
+    var audienceButtons = audience.querySelectorAll("[data-audience-key]");
+    function showProfile(key) {
+      audienceButtons.forEach(function (button) {
+        var active = button.getAttribute("data-audience-key") === key;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+      if (audiencePanel) audiencePanel.textContent = profiles[key] || "";
+    }
+    audienceButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        showProfile(button.getAttribute("data-audience-key"));
+      });
+    });
+    showProfile("ventas");
+  }
+
   document.querySelectorAll("[data-faq-trigger]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var item = btn.closest(".faq-item");
@@ -202,6 +235,8 @@
           "\nÁrea: " + data.get("topic") +
           "\n\nMensaje:\n" + data.get("message")
       );
+      var hint = form.querySelector(".form-hint");
+      if (hint) hint.textContent = "Listo. Se está abriendo tu correo con el mensaje preparado.";
       window.location.href = "mailto:" + (form.getAttribute("data-email") || "hola@flairven.com") +
         "?subject=" + subject + "&body=" + body;
     });
