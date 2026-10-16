@@ -134,6 +134,45 @@
     render("ventas");
   }
 
+  var journey = document.querySelector("[data-journey]");
+  if (journey) {
+    var journeySteps = [
+      {
+        title: "Diagnóstico",
+        text: "En 30 minutos revisamos qué tarea se repite, qué herramientas usas y qué conviene automatizar primero.",
+      },
+      {
+        title: "Propuesta",
+        text: "Recibes alcance, herramienta recomendada, plazos y un precio cerrado antes de construir.",
+      },
+      {
+        title: "Implementación",
+        text: "Construimos el flujo, lo probamos contigo y dejamos alertas cuando algo falla.",
+      },
+      {
+        title: "Entrega",
+        text: "El sistema queda en tu cuenta, con una guía corta para que tu equipo lo opere.",
+      },
+    ];
+    var panel = journey.querySelector("[data-journey-panel]");
+    var buttons = journey.querySelectorAll("[data-journey-step]");
+    function showJourney(index) {
+      var step = journeySteps[index];
+      buttons.forEach(function (button) {
+        button.classList.toggle("is-active", button.getAttribute("data-journey-step") === String(index));
+      });
+      if (panel && step) {
+        panel.innerHTML = "<h3>" + step.title + "</h3><p>" + step.text + "</p>";
+      }
+    }
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        showJourney(button.getAttribute("data-journey-step"));
+      });
+    });
+    showJourney(0);
+  }
+
   document.querySelectorAll("[data-faq-trigger]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var item = btn.closest(".faq-item");
@@ -141,7 +180,12 @@
       document.querySelectorAll(".faq-item.is-open").forEach(function (i) {
         i.classList.remove("is-open");
       });
-      if (!open) item.classList.add("is-open");
+      if (!open) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      } else {
+        btn.setAttribute("aria-expanded", "false");
+      }
     });
   });
 

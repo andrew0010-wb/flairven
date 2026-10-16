@@ -645,6 +645,110 @@ textarea {
   }
 }
 
+.card,
+.step,
+.hero-panel,
+.faq-item,
+.form-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-hit {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.card-hit:hover,
+.step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(18, 32, 51, 0.08);
+  border-color: #b9d4f2;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 8px 24px rgba(18, 32, 51, 0.08);
+}
+
+.wf-node.is-live {
+  background: #f8fbff;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.wf-node.is-current {
+  background: var(--blue-soft);
+  border-radius: 10px;
+}
+
+.journey-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.journey-nav button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 14px 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.journey-nav button.is-active {
+  background: var(--amber);
+  border-color: var(--amber-deep);
+  color: var(--ink);
+}
+
+.journey-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  min-height: 140px;
+}
+
+.journey-panel h3 {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-size: 1.6rem;
+}
+
+.journey-panel p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.faq-item button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq-item button::after {
+  content: "+";
+  color: var(--blue);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.faq-item.is-open button::after {
+  content: "–";
+}
+
+@media (max-width: 760px) {
+  .journey-nav {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;

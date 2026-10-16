@@ -14,16 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css?v=5" />
-    <style>
-      html, body { background: #f4f7fb !important; color: #122033 !important; }
-      h1, h2, h3, p, li, button, label, .faq-item button { color: #122033 !important; background-color: transparent; }
-      .faq-item, .faq-item button, .faq-answer, .card, .hero-panel, .cta, .site-footer { background: #ffffff !important; color: #122033 !important; }
-      .faq-answer, .hero-lead, .card p, .cta p { color: #526173 !important; }
-      .faq-answer { display: none !important; }
-      .faq-item.is-open .faq-answer { display: block !important; }
-      .btn-primary { background: #f5b400 !important; color: #122033 !important; }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css?v=6" />
   </head>
   <body data-page="index.html">
     <div id="site-header"></div>
@@ -92,24 +83,24 @@
           </p>
         </div>
         <div class="grid-3 reveal">
-          <article class="card">
+          <a class="card card-hit" href="/servicios.html">
             <div class="card-icon">01</div>
             <h3>Automatización de procesos</h3>
             <p>Ventas, soporte, finanzas y reporting con flujos estables.</p>
-            <a class="card-link" href="/servicios.html">Detalle →</a>
-          </article>
-          <article class="card">
+            <span class="card-link">Ver detalle</span>
+          </a>
+          <a class="card card-hit" href="/servicios.html#ia">
             <div class="card-icon">02</div>
             <h3>Integraciones e IA</h3>
             <p>Conectores, APIs y modelos con reglas de negocio claras.</p>
-            <a class="card-link" href="/servicios.html">Detalle →</a>
-          </article>
-          <article class="card">
+            <span class="card-link">Ver detalle</span>
+          </a>
+          <a class="card card-hit" href="/contacto.html">
             <div class="card-icon">03</div>
             <h3>Soporte y evolución</h3>
             <p>Monitoreo, optimización y mejoras continuas bajo acuerdo.</p>
-            <a class="card-link" href="/servicios.html">Detalle →</a>
-          </article>
+            <span class="card-link">Hablar con el equipo</span>
+          </a>
         </div>
       </section>
 
@@ -118,27 +109,14 @@
           <span class="kicker">Metodología</span>
           <h2>Proceso claro de principio a fin</h2>
         </div>
-        <div class="steps reveal">
-          <article class="step">
-            <span class="step-num">Paso 01</span>
-            <h3>Diagnóstico</h3>
-            <p>Mapeo de procesos, volumen y oportunidades de mejora.</p>
-          </article>
-          <article class="step">
-            <span class="step-num">Paso 02</span>
-            <h3>Propuesta</h3>
-            <p>Alcance, herramienta, plazos y presupuesto cerrado.</p>
-          </article>
-          <article class="step">
-            <span class="step-num">Paso 03</span>
-            <h3>Implementación</h3>
-            <p>Build, pruebas, logs y validación con tu equipo.</p>
-          </article>
-          <article class="step">
-            <span class="step-num">Paso 04</span>
-            <h3>Entrega</h3>
-            <p>Documentación y handover en tu entorno.</p>
-          </article>
+        <div class="journey reveal" data-journey>
+          <div class="journey-nav" role="tablist">
+            <button type="button" class="is-active" data-journey-step="0">1. Diagnóstico</button>
+            <button type="button" data-journey-step="1">2. Propuesta</button>
+            <button type="button" data-journey-step="2">3. Implementación</button>
+            <button type="button" data-journey-step="3">4. Entrega</button>
+          </div>
+          <div class="journey-panel" data-journey-panel></div>
         </div>
       </section>
 
@@ -148,21 +126,21 @@
         </div>
         <div class="faq reveal">
           <div class="faq-item">
-            <button type="button" data-faq-trigger>¿Qué plataforma recomiendan?</button>
+            <button type="button" data-faq-trigger aria-expanded="false">¿Qué plataforma recomiendan?</button>
             <div class="faq-answer">
               Elegimos según volumen, complejidad, mantenimiento y requisitos de
               datos. La decisión queda documentada en la propuesta.
             </div>
           </div>
           <div class="faq-item">
-            <button type="button" data-faq-trigger>¿Quién es dueño de los flujos?</button>
+            <button type="button" data-faq-trigger aria-expanded="false">¿Quién es dueño de los flujos?</button>
             <div class="faq-answer">
               Tú. Implementamos en tu workspace y entregamos documentación para
               operación interna.
             </div>
           </div>
           <div class="faq-item">
-            <button type="button" data-faq-trigger>¿Cuánto tarda un proyecto?</button>
+            <button type="button" data-faq-trigger aria-expanded="false">¿Cuánto tarda un proyecto?</button>
             <div class="faq-answer">
               Un flujo acotado suele publicarse en 1–3 semanas. Proyectos
               amplios se dividen por hitos.
@@ -181,8 +159,8 @@
     </main>
 
     <div id="site-footer"></div>
-    <script src="/js/site-config.js?v=5"></script>
-    <script src="/js/layout.js?v=5"></script>
-    <script src="/js/main.js?v=5"></script>
+    <script src="/js/site-config.js?v=6"></script>
+    <script src="/js/layout.js?v=6"></script>
+    <script src="/js/main.js?v=6"></script>
   </body>
 </html>
