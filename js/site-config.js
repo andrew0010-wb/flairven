@@ -16,7 +16,7 @@
       slug: "portafolio",
       title: "Ejemplos",
       href: "portafolio.html",
-      description: "Así se vería el cambio, sin clientes inventados.",
+      description: "Cómo una empresa ahorra tiempo y dinero.",
     },
     {
       slug: "contacto",

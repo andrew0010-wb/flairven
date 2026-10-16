@@ -408,16 +408,6 @@ h2,
   font-size: 0.75rem;
 }
 
-.trust-band {
-  margin-top: 36px;
-  padding: 18px 22px;
-  border-radius: 18px;
-  background: var(--amber);
-  color: var(--ink);
-}
-
-.trust-band p,
-.note-band p,
 .form-note,
 .direct-mail,
 .form-success p {
@@ -425,24 +415,13 @@ h2,
   color: var(--ink);
 }
 
-.note-band {
-  margin: 8px 0 22px;
-  padding: 22px 24px;
-  border-radius: 18px;
-  background: var(--amber);
-}
-
-.note-band h2,
 .form-success h3 {
   font-family: var(--display);
   font-weight: 560;
+  font-size: 2rem;
   letter-spacing: -0.03em;
   margin: 0 0 8px;
   color: var(--ink);
-}
-
-.note-band h2 {
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
 }
 
 .before-after {
@@ -475,10 +454,6 @@ h2,
   margin-top: 10px;
   font-size: 0.85rem;
   color: var(--muted);
-}
-
-.form-success h3 {
-  font-size: 2rem;
 }
 
 .honey {
