@@ -28,7 +28,7 @@
 
   window.FLAIRVEN_SITE = {
     name: "Flairven",
-    tagline: "Automatizaciones inteligentes para equipos que quieren escalar sin fricción.",
+    tagline: "Automatizaciones interactivas, medibles y bajo tu control.",
     email: "hola@flairven.com",
     phone: "",
     ctaLabel: "Consultoría gratis",

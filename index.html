@@ -5,242 +5,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Flairven — Agencia de automatización. Diseñamos flujos en n8n, Make y Zapier para ahorrar tiempo, reducir errores y escalar operaciones."
+      content="Flairven — Automatizaciones con n8n, Make y Zapier. Diseño interactivo, entrega documentada y resultados medibles."
     />
-    <title>Flairven | Automatizaciones para tu negocio</title>
+    <title>Flairven | Automatiza tu operación</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body data-page="index.html">
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="noise" aria-hidden="true"></div>
+    <div class="orb-field" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+    </div>
+    <div class="grid-bg" aria-hidden="true"></div>
     <div id="site-header"></div>
 
     <main>
-      <section class="hero-split" id="inicio">
-        <div class="hero-copy">
-          <p class="eyebrow">Agencia de automatización</p>
-          <h1>
-            Deja que los flujos trabajen por ti con
-            <span class="gradient">Flairven</span>
-          </h1>
-          <p class="hero-lead">
-            Diseñamos, implementamos y mantenemos automatizaciones entre CRM,
-            hojas de cálculo, email, WhatsApp e IA. Menos tareas manuales, más
-            control y entregables documentados en tu cuenta.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="contacto.html">Consultoría gratis</a>
-            <a class="btn btn-ghost" href="servicios.html">Ver servicios</a>
+      <section class="hero" id="inicio">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <div class="pill-row">
+              <span class="pill pill-live"><span class="pulse"></span> Disponible para proyectos</span>
+              <span class="pill">n8n · Make · Zapier</span>
+            </div>
+            <h1>
+              Automatiza lo repetitivo.<br />
+              <span class="text-shine">Escala lo importante.</span>
+            </h1>
+            <p class="hero-lead">
+              Flairven conecta tus herramientas, aplica IA donde aporta y deja
+              flujos robustos en <strong>tu cuenta</strong>, con logs, reintentos
+              y documentación clara.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-glow" href="contacto.html">
+                Reservar consultoría
+                <span class="btn-arrow">→</span>
+              </a>
+              <a class="btn btn-glass" href="#demo">Probar demo</a>
+            </div>
+            <div class="hero-metrics">
+              <div class="hm-item">
+                <strong data-count="70" data-suffix="%">0%</strong>
+                <span>Menos trabajo manual</span>
+              </div>
+              <div class="hm-item">
+                <strong data-count="14" data-suffix=" d">0 d</strong>
+                <span>Primer flujo live</span>
+              </div>
+              <div class="hm-item">
+                <strong data-prefix="+" data-count="40" data-suffix="">0</strong>
+                <span>Integraciones típicas</span>
+              </div>
+            </div>
           </div>
-          <ul class="hero-bullets">
-            <li>Alcance y precio por escrito antes de construir</li>
-            <li>Manejo de errores, logs y reintentos incluidos</li>
-            <li>Tú eres dueño de cada flujo y credencial</li>
-          </ul>
-        </div>
-        <div class="workflow-panel" aria-hidden="true">
-          <p class="workflow-label">workflow · lead_to_crm_v2</p>
-          <div class="workflow-nodes">
-            <div class="wf-node">
-              <span class="wf-dot"></span>
-              Formulario web · nuevo lead
-              <span class="mono">trigger</span>
+
+          <div class="flow-demo reveal" id="demo" style="--reveal-delay: 0.15s">
+            <div class="flow-demo-head">
+              <div>
+                <p class="flow-title">Simulador de flujo</p>
+                <p class="flow-label" data-flow-label>workflow · lead_pipeline</p>
+              </div>
+              <span class="flow-status">live preview</span>
             </div>
-            <div class="wf-connector"></div>
-            <div class="wf-node">
-              <span class="wf-dot"></span>
-              Enriquecer con IA · calificar
-              <span class="mono">openai</span>
+            <div class="flow-tabs" role="tablist">
+              <button type="button" class="flow-tab is-active" data-flow-tab="ventas" role="tab" aria-selected="true">
+                Ventas
+              </button>
+              <button type="button" class="flow-tab" data-flow-tab="soporte" role="tab" aria-selected="false">
+                Soporte
+              </button>
+              <button type="button" class="flow-tab" data-flow-tab="ops" role="tab" aria-selected="false">
+                Operaciones
+              </button>
             </div>
-            <div class="wf-connector"></div>
-            <div class="wf-node">
-              <span class="wf-dot"></span>
-              Crear deal · notificar Slack
-              <span class="mono">crm</span>
-            </div>
-            <div class="wf-connector"></div>
-            <div class="wf-node">
-              <span class="wf-dot"></span>
-              Email de bienvenida · secuencia
-              <span class="mono">send</span>
-            </div>
+            <div class="workflow-nodes" data-flow-nodes></div>
+            <p class="flow-hint">Haz clic en un escenario para ver cómo se encadena el proceso.</p>
           </div>
         </div>
       </section>
 
-      <section class="logo-strip">
-        <p>Stack que dominamos</p>
-        <div class="logo-badges">
-          <span class="badge">n8n</span>
-          <span class="badge">Make</span>
-          <span class="badge">Zapier</span>
-          <span class="badge">OpenAI</span>
-          <span class="badge">Google Workspace</span>
-          <span class="badge">HubSpot</span>
-          <span class="badge">Notion</span>
-          <span class="badge">APIs REST</span>
+      <section class="marquee-wrap" aria-hidden="true">
+        <div class="marquee">
+          <span>n8n</span><span>Make</span><span>Zapier</span><span>OpenAI</span>
+          <span>HubSpot</span><span>Notion</span><span>Slack</span><span>Google Sheets</span>
+          <span>WhatsApp API</span><span>Shopify</span><span>Airtable</span><span>PostgreSQL</span>
+          <span>n8n</span><span>Make</span><span>Zapier</span><span>OpenAI</span>
+          <span>HubSpot</span><span>Notion</span><span>Slack</span><span>Google Sheets</span>
         </div>
       </section>
 
-      <section class="section" id="servicios-preview">
-        <div class="section-head">
-          <p class="eyebrow" style="justify-content: center">Qué hacemos</p>
-          <h2 class="section-title">Automatización con estándar de agencia</h2>
+      <section class="section" id="servicios">
+        <div class="section-head reveal">
+          <p class="eyebrow">Servicios</p>
+          <h2 class="section-title">Todo lo que necesitas en un solo equipo</h2>
           <p class="section-sub">
-            Inspirado en las mejores prácticas del sector: procesos claros,
-            métricas y handover que tu equipo puede operar.
+            Pasa el cursor sobre las tarjetas. Cada bloque es un pilar real de
+            proyectos que entregamos en producción.
           </p>
         </div>
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Flujos operativos</h3>
-            <p>
-              Ventas, soporte, facturación y onboarding conectados entre
-              herramientas que ya usas.
-            </p>
-            <a class="card-link" href="servicios.html#flujos">Detalle →</a>
+        <div class="bento reveal">
+          <article class="bento-card bento-wide">
+            <span class="bento-tag">01</span>
+            <h3>Automatización de procesos</h3>
+            <p>CRM, facturación, onboarding y reporting sin copiar/pegar.</p>
+            <a href="servicios.html#flujos">Explorar →</a>
           </article>
-          <article class="card">
-            <div class="card-icon">🤖</div>
+          <article class="bento-card">
+            <span class="bento-tag">02</span>
             <h3>IA aplicada</h3>
-            <p>
-              Clasificación de leads, respuestas asistidas, extracción de datos
-              y resúmenes con reglas y auditoría.
-            </p>
-            <a class="card-link" href="servicios.html#ia">Detalle →</a>
+            <p>Clasificación, extracción y borradores con control humano.</p>
           </article>
-          <article class="card">
-            <div class="card-icon">🔗</div>
-            <h3>Integraciones a medida</h3>
-            <p>
-              APIs, webhooks y bases de datos cuando no existe conector
-              nativo.
-            </p>
-            <a class="card-link" href="servicios.html#integraciones">Detalle →</a>
+          <article class="bento-card">
+            <span class="bento-tag">03</span>
+            <h3>Integraciones API</h3>
+            <p>Webhooks, SQL y código cuando no hay conector nativo.</p>
           </article>
-          <article class="card">
-            <div class="card-icon">🛡</div>
-            <h3>Soporte y evolución</h3>
-            <p>
-              Monitoreo, optimización de costos de ejecución y mejoras
-              continuas bajo retainer opcional.
-            </p>
-            <a class="card-link" href="servicios.html#soporte">Detalle →</a>
+          <article class="bento-card bento-tall">
+            <span class="bento-tag">04</span>
+            <h3>Rescue &amp; retainer</h3>
+            <p>Arreglamos flujos rotos y optimizamos costos de ejecución mes a mes.</p>
+          </article>
+          <article class="bento-card">
+            <span class="bento-tag">05</span>
+            <h3>Auditoría express</h3>
+            <p>Mapa de oportunidades en 30 minutos, sin compromiso.</p>
           </article>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-head">
-          <p class="eyebrow" style="justify-content: center">Proceso</p>
-          <h2 class="section-title">De la idea al handover en cuatro pasos</h2>
+      <section class="section section-process">
+        <div class="section-head reveal">
+          <p class="eyebrow">Método</p>
+          <h2 class="section-title">Cuatro fases, cero sorpresas</h2>
         </div>
-        <div class="process-grid">
-          <article class="step">
-            <p class="step-num">01 · Discovery</p>
-            <h3>Mapa del proceso</h3>
-            <p>
-              Entendemos volumen, apps, riesgos y ROI estimado en una sesión
-              estructurada.
-            </p>
-          </article>
-          <article class="step">
-            <p class="step-num">02 · Blueprint</p>
-            <h3>Diseño del flujo</h3>
-            <p>
-              Diagrama, herramienta elegida (n8n, Make o Zapier) y criterios de
-              éxito acordados.
-            </p>
-          </article>
-          <article class="step">
-            <p class="step-num">03 · Build</p>
-            <h3>Implementación</h3>
-            <p>
-              Construcción con manejo de errores, pruebas en staging y demos
-              intermedias.
-            </p>
-          </article>
-          <article class="step">
-            <p class="step-num">04 · Handover</p>
-            <h3>Documentación</h3>
-            <p>
-              Manual, credenciales en tu cuenta y opción de retainer para
-              monitoreo.
-            </p>
-          </article>
+        <ol class="timeline reveal">
+          <li class="timeline-step">
+            <span class="tl-num">1</span>
+            <div>
+              <h3>Discovery</h3>
+              <p>Volumen, apps, riesgos y ROI estimado.</p>
+            </div>
+          </li>
+          <li class="timeline-step">
+            <span class="tl-num">2</span>
+            <div>
+              <h3>Blueprint</h3>
+              <p>Diagrama + herramienta elegida + precio cerrado.</p>
+            </div>
+          </li>
+          <li class="timeline-step">
+            <span class="tl-num">3</span>
+            <div>
+              <h3>Build</h3>
+              <p>Staging, pruebas, manejo de errores y demos.</p>
+            </div>
+          </li>
+          <li class="timeline-step">
+            <span class="tl-num">4</span>
+            <div>
+              <h3>Handover</h3>
+              <p>Documentación y traspaso en tu cuenta.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <div class="quote-card reveal">
+          <blockquote>
+            “El objetivo no es automatizar por automatizar: es recuperar horas
+            del equipo y reducir errores en lo crítico.”
+          </blockquote>
+          <p class="quote-by">— Enfoque Flairven</p>
         </div>
       </section>
 
       <section class="section">
-        <div class="metrics" aria-label="Resultados típicos">
-          <div class="metric">
-            <strong>70%</strong>
-            <span>Menos tiempo en tareas repetitivas</span>
-          </div>
-          <div class="metric">
-            <strong>2–4 sem</strong>
-            <span>Primer flujo en producción</span>
-          </div>
-          <div class="metric">
-            <strong>100%</strong>
-            <span>Propiedad en tu cuenta</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-head">
+        <div class="section-head reveal">
           <h2 class="section-title">Preguntas frecuentes</h2>
         </div>
-        <div class="faq-list">
+        <div class="faq-list reveal">
           <div class="faq-item">
             <button type="button" data-faq-trigger aria-expanded="false">
-              ¿n8n, Make o Zapier?
+              ¿Cuánto tarda un primer proyecto?
             </button>
             <div class="faq-answer">
-              Elegimos por proceso: volumen, complejidad, quién mantiene el
-              flujo y si los datos deben quedarse en tu infraestructura. La
-              decisión queda documentada en el blueprint.
+              Un flujo acotado suele estar en producción en 1–3 semanas según
+              integraciones y accesos. Proyectos multi-área se planifican por
+              hitos.
             </div>
           </div>
           <div class="faq-item">
             <button type="button" data-faq-trigger aria-expanded="false">
-              ¿Cuánto cuesta un proyecto?
+              ¿Quién es dueño de las automatizaciones?
             </button>
             <div class="faq-answer">
-              Un flujo puntual suele ir desde proyectos pequeños; sistemas con
-              varios escenarios conectados requieren alcance mayor. Siempre
-              cotizamos por escrito antes de desarrollar.
+              Tú. Trabajamos en tu workspace (n8n cloud, Make, Zapier) y
+              entregamos documentación para que tu equipo pueda operarlas.
             </div>
           </div>
           <div class="faq-item">
             <button type="button" data-faq-trigger aria-expanded="false">
-              ¿Qué recibo al final?
+              ¿Pueden conectar WhatsApp o IA?
             </button>
             <div class="faq-answer">
-              Flujos en tu cuenta, documentación de triggers y pasos, manejo de
-              fallos configurado y sesión de traspaso con tu equipo.
+              Sí, siempre con reglas claras: qué se automatiza, qué requiere
+              revisión humana y cómo se registran las acciones.
             </div>
           </div>
         </div>
       </section>
 
       <section class="section">
-        <div class="cta-band">
-          <h2>¿Listo para automatizar lo repetitivo?</h2>
-          <p>
-            Reserva una consultoría de 30 minutos. Te decimos qué conviene
-            automatizar primero, cuánto puede ahorrar y el siguiente paso
-            concreto.
-          </p>
-          <a class="btn btn-primary" href="contacto.html">Agendar consultoría</a>
+        <div class="cta-band reveal">
+          <h2>¿Empezamos con tu proceso más doloroso?</h2>
+          <p>Consultoría gratuita de 30 minutos · respuesta en 24 h hábiles</p>
+          <a class="btn btn-primary btn-glow" href="contacto.html">Agendar ahora</a>
         </div>
       </section>
     </main>
