@@ -24,6 +24,10 @@
         page.title +
         "</a></li>";
     });
+    html +=
+      '<li class="nav-cta"><a class="btn btn-primary btn-sm" href="/contacto.html">' +
+      (site.ctaLabel || "Contacto") +
+      "</a></li>";
     return html;
   }
 
@@ -31,13 +35,14 @@
   if (header) {
     header.innerHTML =
       '<header class="site-header">' +
+      '<a class="skip" href="#contenido">Saltar al contenido</a>' +
       '<div class="header-inner">' +
       '<a class="logo" href="/index.html">' +
       site.name.slice(0, 5) +
       "<span>" +
       site.name.slice(5) +
       "</span></a>" +
-      '<button type="button" class="nav-toggle" aria-expanded="false">Menú</button>' +
+      '<button type="button" class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">Menú</button>' +
       '<div class="header-actions">' +
       '<nav aria-label="Principal"><ul class="nav">' +
       navLinks() +

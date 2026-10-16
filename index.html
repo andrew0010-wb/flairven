@@ -7,19 +7,27 @@
       name="description"
       content="Flairven hace que las tareas repetidas de tu negocio se hagan solas. Sin que tengas que aprender tecnología."
     />
+    <meta name="theme-color" content="#f6f1e8" />
     <title>Flairven | Menos trabajo repetido</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://flairven.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es" />
+    <meta property="og:title" content="Flairven | Menos trabajo repetido" />
+    <meta property="og:description" content="Flairven hace que las tareas repetidas de tu negocio se hagan solas. Sin que tengas que aprender tecnología." />
+    <meta property="og:url" content="https://flairven.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css?v=10" />
+    <link rel="stylesheet" href="/css/styles.css?v=12" />
   </head>
   <body data-page="index.html">
     <div id="site-header"></div>
 
-    <main class="container">
+    <main id="contenido" class="container">
       <section class="hero">
         <div class="hero-grid">
           <div class="reveal">
@@ -36,16 +44,16 @@
             </div>
             <div class="hero-stats">
               <div class="stat">
-                <strong data-count="70" data-suffix="%">0%</strong>
-                <span>menos tiempo en tareas que se repiten</span>
+                <strong data-count="30" data-suffix=" min">0 min</strong>
+                <span>la primera charla, sin costo</span>
               </div>
               <div class="stat">
-                <strong data-count="14" data-suffix=" días">0 días</strong>
-                <span>para ver el primer proceso funcionando</span>
+                <strong data-count="1" data-suffix=" día">0 día</strong>
+                <span>hábil para responderte</span>
               </div>
               <div class="stat">
-                <strong data-count="100" data-suffix="%">0%</strong>
-                <span>queda a tu nombre, no al nuestro</span>
+                <strong>Tuyo</strong>
+                <span>el sistema queda en tus cuentas</span>
               </div>
             </div>
           </div>
@@ -56,9 +64,9 @@
               <span class="panel-badge">Pruébalo</span>
             </div>
             <div class="flow-tabs" role="tablist">
-              <button type="button" class="flow-tab is-active" data-flow-tab="ventas">Ventas</button>
-              <button type="button" class="flow-tab" data-flow-tab="soporte">Clientes</button>
-              <button type="button" class="flow-tab" data-flow-tab="ops">Pedidos</button>
+              <button type="button" class="flow-tab is-active" role="tab" aria-selected="true" data-flow-tab="ventas">Ventas</button>
+              <button type="button" class="flow-tab" role="tab" aria-selected="false" data-flow-tab="soporte">Clientes</button>
+              <button type="button" class="flow-tab" role="tab" aria-selected="false" data-flow-tab="ops">Pedidos</button>
             </div>
             <div data-flow-nodes></div>
             <p class="panel-note">Toca un botón y mira el orden en que se haría solo.</p>
@@ -66,11 +74,12 @@
         </div>
       </section>
 
-      <section class="logo-bar">
-        <div class="container logo-bar-inner">
-          <span>n8n</span><span>Make</span><span>Zapier</span><span>HubSpot</span>
-          <span>Google Workspace</span><span>Slack</span><span>OpenAI</span><span>APIs</span>
-        </div>
+      <section class="trust-band">
+        <p>
+          Todavía no publicamos nombres de clientes. Preferimos eso a inventar
+          resultados. El precio va por escrito, lo pruebas con nosotros y el
+          sistema queda en tus cuentas.
+        </p>
       </section>
 
       <section class="section">
@@ -97,13 +106,13 @@
           <p>Sin contratos raros ni palabras difíciles. Tú nos cuentas el problema y nosotros lo armamos.</p>
         </div>
         <div class="grid-3 reveal">
-          <a class="card card-hit" href="/servicios.html">
+          <a class="card card-hit" href="/portafolio.html">
             <div class="card-icon">01</div>
             <h3>Que lo repetido se haga solo</h3>
             <p>Seguimiento de clientes, facturas, avisos y reportes, sin copiar y pegar.</p>
             <span class="card-link">Ver ejemplos</span>
           </a>
-          <a class="card card-hit" href="/servicios.html#ia">
+          <a class="card card-hit" href="/servicios.html#integraciones">
             <div class="card-icon">02</div>
             <h3>Que tus apps se hablen</h3>
             <p>WhatsApp, Excel, correo y tu lista de clientes, conectados entre sí.</p>
@@ -125,10 +134,10 @@
         </div>
         <div class="journey reveal" data-journey>
           <div class="journey-nav" role="tablist">
-            <button type="button" class="is-active" data-journey-step="0">1. Te escuchamos</button>
-            <button type="button" data-journey-step="1">2. Te decimos el plan</button>
-            <button type="button" data-journey-step="2">3. Lo armamos</button>
-            <button type="button" data-journey-step="3">4. Queda en tus manos</button>
+            <button type="button" class="is-active" role="tab" aria-selected="true" data-journey-step="0">1. Te escuchamos</button>
+            <button type="button" role="tab" aria-selected="false" data-journey-step="1">2. Te decimos el plan</button>
+            <button type="button" role="tab" aria-selected="false" data-journey-step="2">3. Lo armamos</button>
+            <button type="button" role="tab" aria-selected="false" data-journey-step="3">4. Queda en tus manos</button>
           </div>
           <div class="journey-panel" data-journey-panel></div>
         </div>
@@ -154,6 +163,13 @@
             </div>
           </div>
           <div class="faq-item">
+            <button type="button" data-faq-trigger aria-expanded="false">¿Por qué no veo clientes?</button>
+            <div class="faq-answer">
+              Porque preferimos no inventarlos. Cuando un resultado sea real y
+              el cliente nos dé permiso, lo publicamos con su nombre.
+            </div>
+          </div>
+          <div class="faq-item">
             <button type="button" data-faq-trigger aria-expanded="false">¿Cuánto se demora?</button>
             <div class="faq-answer">
               Un proceso sencillo suele estar listo en una a tres semanas. Si
@@ -173,8 +189,8 @@
     </main>
 
     <div id="site-footer"></div>
-    <script src="/js/site-config.js?v=10"></script>
-    <script src="/js/layout.js?v=10"></script>
-    <script src="/js/main.js?v=10"></script>
+    <script src="/js/site-config.js?v=12"></script>
+    <script src="/js/layout.js?v=12"></script>
+    <script src="/js/main.js?v=12"></script>
   </body>
 </html>

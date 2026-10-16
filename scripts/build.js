@@ -34,4 +34,11 @@ for (const dir of ["css", "js"]) {
   }
 }
 
+for (const file of ["robots.txt", "sitemap.xml", "favicon.svg"]) {
+  const src = path.join(root, file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, path.join(out, file));
+  }
+}
+
 console.log("Build OK: archivos estáticos en dist/");

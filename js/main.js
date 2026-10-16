@@ -80,6 +80,14 @@
     document.querySelectorAll(".reveal").forEach(function (el) {
       el.classList.add("is-visible");
     });
+    document.querySelectorAll("[data-count]").forEach(function (el) {
+      var target = parseInt(el.getAttribute("data-count"), 10);
+      if (isNaN(target)) return;
+      el.textContent =
+        (el.getAttribute("data-prefix") || "") +
+        target +
+        (el.getAttribute("data-suffix") || "");
+    });
   }
 
   var demo = document.getElementById("demo");
@@ -134,8 +142,10 @@
       tab.addEventListener("click", function () {
         tabs.forEach(function (t) {
           t.classList.remove("is-active");
+          t.setAttribute("aria-selected", "false");
         });
         tab.classList.add("is-active");
+        tab.setAttribute("aria-selected", "true");
         render(tab.getAttribute("data-flow-tab"));
       });
     });
@@ -167,7 +177,9 @@
     function showJourney(index) {
       var step = journeySteps[index];
       buttons.forEach(function (button) {
-        button.classList.toggle("is-active", button.getAttribute("data-journey-step") === String(index));
+        var active = button.getAttribute("data-journey-step") === String(index);
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-selected", active ? "true" : "false");
       });
       if (panel && step) {
         panel.innerHTML = "<h3>" + step.title + "</h3><p>" + step.text + "</p>";
@@ -212,33 +224,83 @@
       var open = item.classList.contains("is-open");
       document.querySelectorAll(".faq-item.is-open").forEach(function (i) {
         i.classList.remove("is-open");
+        var trigger = i.querySelector("[data-faq-trigger]");
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
       });
       if (!open) {
         item.classList.add("is-open");
         btn.setAttribute("aria-expanded", "true");
-      } else {
-        btn.setAttribute("aria-expanded", "false");
       }
     });
   });
+
+  function escapeText(value) {
+    return String(value || "").replace(/[&<>"']/g, function (char) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      }[char];
+    });
+  }
 
   var form = document.getElementById("contact-form");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var data = new FormData(form);
-      var subject = encodeURIComponent("Consulta Flairven — " + (data.get("company") || "Nuevo contacto"));
-      var body = encodeURIComponent(
-        "Nombre: " + data.get("name") +
-          "\nEmpresa: " + data.get("company") +
-          "\nEmail: " + data.get("email") +
-          "\nÁrea: " + data.get("topic") +
-          "\n\nMensaje:\n" + data.get("message")
-      );
+      if (String(data.get("_honey") || "").trim()) return;
+      var emailTo = form.getAttribute("data-email") || "hola@flairven.com";
+      var payload = {
+        name: data.get("name"),
+        email: data.get("email"),
+        company: data.get("company") || "No indicó",
+        topic: data.get("topic"),
+        message: data.get("message"),
+        _subject: "Charla Flairven — " + (data.get("company") || data.get("name") || "Nuevo contacto"),
+        _template: "table",
+        _captcha: "false",
+      };
       var hint = form.querySelector(".form-hint");
-      if (hint) hint.textContent = "Listo. Se está abriendo tu correo con el mensaje preparado.";
-      window.location.href = "mailto:" + (form.getAttribute("data-email") || "hola@flairven.com") +
-        "?subject=" + subject + "&body=" + body;
+      var button = form.querySelector("button[type=submit]");
+      if (button) button.disabled = true;
+      if (hint) hint.textContent = "Enviando tu mensaje…";
+
+      function openMail() {
+        var subject = encodeURIComponent(payload._subject);
+        var body = encodeURIComponent(
+          "Nombre: " + payload.name +
+            "\nEmpresa: " + payload.company +
+            "\nEmail: " + payload.email +
+            "\nÁrea: " + payload.topic +
+            "\n\nMensaje:\n" + payload.message
+        );
+        if (button) button.disabled = false;
+        if (hint) hint.textContent = "No pudimos enviarlo desde la página. Se abre tu correo para que lo mandes tú.";
+        window.location.href = "mailto:" + emailTo + "?subject=" + subject + "&body=" + body;
+      }
+
+      fetch("https://formsubmit.co/ajax/" + emailTo, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("fail");
+          return res.json();
+        })
+        .then(function () {
+          form.innerHTML =
+            '<div class="form-success"><h3>Listo. Ya nos llegó.</h3><p>Te respondemos en menos de un día hábil a ' +
+            escapeText(payload.email) +
+            ".</p></div>";
+        })
+        .catch(openMail);
     });
   }
 })();

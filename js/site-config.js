@@ -4,25 +4,25 @@
       slug: "servicios",
       title: "Servicios",
       href: "servicios.html",
-      description: "Automatización, integraciones e IA aplicada.",
+      description: "Tareas que se hacen solas, con precios a la vista.",
     },
     {
       slug: "nosotros",
       title: "Nosotros",
       href: "nosotros.html",
-      description: "Metodología y forma de trabajar.",
+      description: "Cómo trabajamos y qué queda en tus manos.",
     },
     {
       slug: "portafolio",
-      title: "Casos",
+      title: "Ejemplos",
       href: "portafolio.html",
-      description: "Resultados en proyectos reales.",
+      description: "Así se vería el cambio, sin clientes inventados.",
     },
     {
       slug: "contacto",
       title: "Contacto",
       href: "contacto.html",
-      description: "Agenda una sesión estratégica.",
+      description: "Charla de 30 minutos, sin costo.",
     },
   ];
 
