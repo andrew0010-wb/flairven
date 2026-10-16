@@ -4,31 +4,32 @@
       slug: "servicios",
       title: "Servicios",
       href: "servicios.html",
-      description: "Lo que hacemos, explicado sin complicaciones.",
+      description: "Automatización, integraciones e IA aplicada.",
     },
     {
       slug: "nosotros",
       title: "Nosotros",
       href: "nosotros.html",
-      description: "Quiénes somos y cómo te tratamos en cada proyecto.",
+      description: "Metodología y forma de trabajar.",
     },
     {
       slug: "portafolio",
       title: "Casos",
       href: "portafolio.html",
-      description: "Historias reales (o de ejemplo) de tiempo recuperado.",
+      description: "Resultados en proyectos reales.",
     },
     {
       slug: "contacto",
       title: "Contacto",
       href: "contacto.html",
-      description: "Escríbenos — respondemos con cariño y claridad.",
+      description: "Agenda una sesión estratégica.",
     },
   ];
 
   window.FLAIRVEN_SITE = {
     name: "Flairven",
-    tagline: "Automatización profesional con resultados medibles y propiedad total del cliente.",
+    tagline:
+      "Agencia de automatización. Diseñamos flujos confiables para equipos que necesitan escalar operaciones.",
     email: "hola@flairven.com",
     phone: "",
     ctaLabel: "Agendar sesión",

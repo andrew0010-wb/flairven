@@ -3,129 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Servicios Flairven: automatización de procesos, IA, integraciones y soporte."
-    />
     <title>Servicios | Flairven</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body data-page="servicios.html">
-    <div class="orb-field" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span></div>
-    <div class="grid-bg" aria-hidden="true"></div>
     <div id="site-header"></div>
+    <main class="page-main container">
+      <span class="kicker">Servicios</span>
+      <h1 class="page-title">Automatización con estándar de consultoría</h1>
+      <p class="page-desc">
+        Servicios diseñados para empresas que necesitan resultados medibles, no
+        experimentos sin plan.
+      </p>
 
-    <main class="page-main">
-      <header class="page-header">
-        <p class="eyebrow">Servicios</p>
-        <h1>Automatizaciones que puedes medir y operar</h1>
-        <p class="page-intro">
-          Paquetes flexibles para equipos de operaciones, agencias y founders.
-          Cada entrega incluye documentación, pruebas y traspaso en tu cuenta.
-        </p>
-      </header>
+      <div class="grid-3" id="flujos">
+        <article class="card">
+          <div class="card-icon">A</div>
+          <h3>Procesos operativos</h3>
+          <p>Lead management, facturación, onboarding y reportes automáticos.</p>
+        </article>
+        <article class="card" id="ia">
+          <div class="card-icon">B</div>
+          <h3>IA aplicada</h3>
+          <p>Clasificación, extracción y asistencia con trazabilidad.</p>
+        </article>
+        <article class="card" id="integraciones">
+          <div class="card-icon">C</div>
+          <h3>Integraciones</h3>
+          <p>APIs, webhooks y conectores personalizados.</p>
+        </article>
+      </div>
 
-      <section class="section" id="flujos" style="padding-top: 0">
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Automatización de procesos</h3>
-            <p>
-              Lead → CRM, pedidos → facturación, tickets → SLA, reportes
-              automáticos y alertas cuando algo falla.
-            </p>
-          </article>
-          <article class="card" id="ia">
-            <div class="card-icon">🤖</div>
-            <h3>IA en flujos reales</h3>
-            <p>
-              Clasificación, extracción de campos, borradores de respuesta y
-              enrutamiento con límites claros y revisión humana donde haga
-              falta.
-            </p>
-          </article>
-          <article class="card" id="integraciones">
-            <div class="card-icon">🔗</div>
-            <h3>Integraciones custom</h3>
-            <p>
-              Conectores propios, scripts en nodos de código, bases SQL y
-              sincronización bidireccional entre sistemas legacy.
-            </p>
-          </article>
-          <article class="card" id="soporte">
-            <div class="card-icon">🛡</div>
-            <h3>Rescue &amp; retainer</h3>
-            <p>
-              Arreglamos flujos rotos, optimizamos consumo de tareas/créditos y
-              ofrecemos monitoreo mensual opcional.
-            </p>
-          </article>
+      <section class="section" style="padding-bottom: 0">
+        <div class="section-header">
+          <h2>Inversión orientativa</h2>
+          <p>Presupuesto final según alcance. Licencias de plataforma aparte.</p>
         </div>
-      </section>
-
-      <section class="section">
-        <div class="section-head">
-          <h2 class="section-title">Bandas de inversión orientativas</h2>
-          <p class="section-sub">
-            Ajustamos según complejidad. La suscripción de la plataforma (Make,
-            Zapier, n8n cloud) va aparte y siempre en tu cuenta.
-          </p>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card">
-            <p class="price-tag">Starter</p>
+        <div class="grid-3">
+          <article class="card price-card">
+            <p class="price-label">Starter</p>
             <h3>Flujo único</h3>
-            <p class="price-amount">Desde USD 450</p>
+            <p class="price-value">Desde USD 450</p>
             <ul>
               <li>1 proceso automatizado</li>
-              <li>Hasta 8 pasos con lógica básica</li>
-              <li>Documentación y handover</li>
+              <li>Documentación incluida</li>
             </ul>
-            <a class="btn btn-ghost" href="contacto.html">Cotizar</a>
+            <a class="btn btn-secondary" href="/contacto.html">Cotizar</a>
           </article>
-          <article class="price-card featured">
-            <p class="price-tag">Growth</p>
+          <article class="card price-card featured">
+            <p class="price-label">Business</p>
             <h3>Sistema conectado</h3>
-            <p class="price-amount">USD 1.500 – 5.000</p>
+            <p class="price-value">USD 1.500 – 5.000</p>
             <ul>
-              <li>Varios flujos relacionados</li>
-              <li>IA + integraciones CRM/Sheets</li>
-              <li>Staging, logs y alertas</li>
+              <li>Varios flujos integrados</li>
+              <li>Monitoreo y alertas</li>
             </ul>
-            <a class="btn btn-primary" href="contacto.html">Cotizar</a>
+            <a class="btn btn-primary" href="/contacto.html">Cotizar</a>
           </article>
-          <article class="price-card">
-            <p class="price-tag">Scale</p>
+          <article class="card price-card">
+            <p class="price-label">Enterprise</p>
             <h3>Operación completa</h3>
-            <p class="price-amount">Desde USD 5.000</p>
+            <p class="price-value">Desde USD 5.000</p>
             <ul>
-              <li>Arquitectura multi-departamento</li>
-              <li>Retainer de evolución opcional</li>
-              <li>Prioridad y roadmap trimestral</li>
+              <li>Arquitectura multi-área</li>
+              <li>Soporte evolutivo</li>
             </ul>
-            <a class="btn btn-ghost" href="contacto.html">Hablar con ventas</a>
+            <a class="btn btn-secondary" href="/contacto.html">Contactar</a>
           </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="cta-band">
-          <h2>¿No sabes por dónde empezar?</h2>
-          <p>
-            En la consultoría gratuita priorizamos 2–3 automatizaciones con
-            mejor retorno y te entregamos un plan de implementación.
-          </p>
-          <a class="btn btn-primary" href="contacto.html">Reservar sesión</a>
         </div>
       </section>
     </main>
-
     <div id="site-footer"></div>
     <script src="/js/site-config.js"></script>
     <script src="/js/layout.js"></script>

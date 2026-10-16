@@ -3,110 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Agenda una sesión estratégica con Flairven. Automatización profesional con plan claro y sin compromiso inicial."
-    />
+    <meta name="description" content="Contacto Flairven — sesión estratégica de automatización." />
     <title>Contacto | Flairven</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body data-page="contacto.html">
-    <div class="orb-field" aria-hidden="true">
-      <span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span>
-    </div>
-    <div class="grid-bg" aria-hidden="true"></div>
     <div id="site-header"></div>
 
-    <main class="page-main">
-      <div class="contact-shell">
-        <div class="contact-value reveal">
-          <p class="eyebrow">Sesión estratégica gratuita</p>
-          <h1>Convierte horas perdidas en procesos que funcionan solos</h1>
-          <p class="contact-lead">
-            En 30 minutos identificamos qué automatizar primero, cuánto puede
-            ahorrarte y el plan concreto para implementarlo — con precio claro
-            antes de empezar.
+    <main class="page-main container">
+      <div class="contact-layout">
+        <div class="contact-info reveal">
+          <span class="kicker">Contacto</span>
+          <h1>Hablemos de tu operación</h1>
+          <p>
+            Completa el formulario y agendamos una sesión de 30 minutos para
+            identificar automatizaciones con mayor impacto y estimar inversión.
           </p>
-          <div class="trust-chips">
-            <span class="trust-chip">30 min · videollamada</span>
-            <span class="trust-chip">Sin compromiso</span>
-            <span class="trust-chip">Respuesta en 24 h</span>
-          </div>
-          <ul class="benefit-cards">
-            <li class="benefit-card">
-              <span class="benefit-icon">01</span>
-              <div>
-                <h3>Diagnóstico de tu operación</h3>
-                <p>Detectamos cuellos de botella y tareas que hoy dependen de personas.</p>
-              </div>
-            </li>
-            <li class="benefit-card">
-              <span class="benefit-icon">02</span>
-              <div>
-                <h3>Prioridades con impacto</h3>
-                <p>Te entregamos 2–3 automatizaciones ordenadas por retorno y facilidad.</p>
-              </div>
-            </li>
-            <li class="benefit-card">
-              <span class="benefit-icon">03</span>
-              <div>
-                <h3>Plan y presupuesto</h3>
-                <p>Herramienta recomendada, plazos realistas y rango de inversión.</p>
-              </div>
-            </li>
+          <ul class="value-list">
+            <li>Diagnóstico inicial de procesos críticos</li>
+            <li>Priorización por retorno y complejidad</li>
+            <li>Propuesta con alcance y plazos definidos</li>
           </ul>
-          <p class="contact-direct">
-            Prefieres escribir directo:
-            <a href="mailto:hola@flairven.com">hola@flairven.com</a>
+          <p style="font-size: 0.9375rem; color: var(--muted)">
+            Email:
+            <a href="mailto:hola@flairven.com" style="color: var(--primary); font-weight: 600"
+              >hola@flairven.com</a
+            >
           </p>
         </div>
 
-        <div class="contact-form-card reveal" style="--reveal-delay: 0.1s">
+        <div class="form-card reveal">
           <h2>Solicitar sesión</h2>
-          <p class="form-sub">Completa el formulario y te contactamos para agendar.</p>
-          <form class="contact-form" id="contact-form" data-email="hola@flairven.com">
-            <div class="form-row">
+          <p class="sub">Responderemos en un plazo máximo de 24 horas hábiles.</p>
+          <form id="contact-form" data-email="hola@flairven.com">
+            <div class="form-grid">
               <label>
                 Nombre
-                <input type="text" name="name" required autocomplete="name" placeholder="Tu nombre" />
+                <input type="text" name="name" required autocomplete="name" />
               </label>
               <label>
                 Empresa
-                <input type="text" name="company" autocomplete="organization" placeholder="Nombre de tu negocio" />
+                <input type="text" name="company" autocomplete="organization" />
               </label>
             </div>
             <label>
-              Email profesional
-              <input type="email" name="email" required autocomplete="email" placeholder="tu@empresa.com" />
+              Email
+              <input type="email" name="email" required autocomplete="email" />
             </label>
             <label>
-              Área a automatizar
+              Área de interés
               <select name="topic">
                 <option value="ventas">Ventas y CRM</option>
                 <option value="soporte">Atención al cliente</option>
-                <option value="ops">Operaciones internas</option>
-                <option value="marketing">Marketing y reportes</option>
-                <option value="otro">Otro proceso</option>
+                <option value="ops">Operaciones</option>
+                <option value="marketing">Marketing y datos</option>
+                <option value="otro">Otro</option>
               </select>
             </label>
             <label>
-              Cuéntanos tu situación
+              Mensaje
               <textarea
                 name="message"
                 required
-                placeholder="¿Qué proceso te quita más tiempo hoy? ¿Qué herramientas usas?"
+                placeholder="Describe el proceso que quieres automatizar y las herramientas que usas."
               ></textarea>
             </label>
-            <button type="submit" class="btn btn-primary btn-glow">Agendar sesión gratuita</button>
-            <p class="form-note">
-              Al enviar, se abrirá tu correo con el mensaje listo para enviarnos.
-            </p>
+            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+            <p class="form-hint">Se abrirá tu cliente de correo con el mensaje preparado.</p>
           </form>
         </div>
       </div>

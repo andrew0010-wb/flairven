@@ -1,31 +1,17 @@
 (function () {
-  function bindNavToggle() {
+  function bindNav() {
     var toggle = document.querySelector(".nav-toggle");
     var nav = document.querySelector(".nav");
     if (!toggle || !nav) return;
-
-    toggle.addEventListener("click", function () {
+    toggle.onclick = function () {
       nav.classList.toggle("is-open");
-      var open = nav.classList.contains("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-
-    nav.querySelectorAll('a[href^="#"]').forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
+      toggle.setAttribute("aria-expanded", nav.classList.contains("is-open"));
+    };
   }
-
-  bindNavToggle();
-
+  bindNav();
   var headerRoot = document.getElementById("site-header");
   if (headerRoot) {
-    new MutationObserver(bindNavToggle).observe(headerRoot, {
-      childList: true,
-      subtree: true,
-    });
+    new MutationObserver(bindNav).observe(headerRoot, { childList: true, subtree: true });
   }
 
   var header = document.querySelector(".site-header");
@@ -33,33 +19,31 @@
     window.addEventListener(
       "scroll",
       function () {
-        header.classList.toggle("is-scrolled", window.scrollY > 24);
+        header.classList.toggle("is-scrolled", window.scrollY > 8);
       },
       { passive: true }
     );
   }
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (!reduceMotion) {
-    var revealEls = document.querySelectorAll(".reveal");
-    if (revealEls.length && "IntersectionObserver" in window) {
-      var revealObs = new IntersectionObserver(
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var reveals = document.querySelectorAll(".reveal");
+    if (reveals.length && "IntersectionObserver" in window) {
+      var obs = new IntersectionObserver(
         function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              revealObs.unobserve(entry.target);
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-visible");
+              obs.unobserve(e.target);
             }
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        { threshold: 0.12 }
       );
-      revealEls.forEach(function (el) {
-        revealObs.observe(el);
+      reveals.forEach(function (el) {
+        obs.observe(el);
       });
     } else {
-      revealEls.forEach(function (el) {
+      reveals.forEach(function (el) {
         el.classList.add("is-visible");
       });
     }
@@ -69,35 +53,20 @@
       if (isNaN(target)) return;
       var suffix = el.getAttribute("data-suffix") || "";
       var prefix = el.getAttribute("data-prefix") || "";
-
-      function animateCount() {
-        var start = 0;
-        var duration = 1400;
-        var startTime = null;
-        function step(ts) {
-          if (!startTime) startTime = ts;
-          var p = Math.min((ts - startTime) / duration, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = prefix + Math.round(start + (target - start) * eased) + suffix;
-          if (p < 1) requestAnimationFrame(step);
+      var done = false;
+      var io = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting || done) return;
+        done = true;
+        var start = performance.now();
+        function tick(now) {
+          var p = Math.min((now - start) / 1200, 1);
+          el.textContent = prefix + Math.round(target * p) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
         }
-        requestAnimationFrame(step);
-      }
-
-      if ("IntersectionObserver" in window) {
-        var countObs = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].isIntersecting) {
-              animateCount();
-              countObs.disconnect();
-            }
-          },
-          { threshold: 0.5 }
-        );
-        countObs.observe(el);
-      } else {
-        el.textContent = prefix + target + suffix;
-      }
+        requestAnimationFrame(tick);
+        io.disconnect();
+      });
+      io.observe(el);
     });
   } else {
     document.querySelectorAll(".reveal").forEach(function (el) {
@@ -105,66 +74,51 @@
     });
   }
 
-  var demo = document.getElementById("flow-demo");
+  var demo = document.getElementById("demo");
   if (demo) {
     var scenarios = {
-      ventas: {
-        label: "ventas",
-        nodes: [
-          { t: "Llega un lead nuevo 🎉", tag: "inicio" },
-          { t: "Lo ordenamos y calificamos", tag: "ia" },
-          { t: "Aparece en tu CRM", tag: "crm" },
-          { t: "Aviso al equipo por Slack", tag: "listo" },
-        ],
-      },
-      soporte: {
-        label: "soporte",
-        nodes: [
-          { t: "Cliente escribe", tag: "mensaje" },
-          { t: "Vemos qué tan urgente es", tag: "ia" },
-          { t: "Lo asignamos a la persona correcta", tag: "equipo" },
-          { t: "Respuesta base si aplica", tag: "auto" },
-        ],
-      },
-      ops: {
-        label: "oficina",
-        nodes: [
-          { t: "Hay un pedido nuevo", tag: "tienda" },
-          { t: "Generamos factura", tag: "pdf" },
-          { t: "Actualizamos la hoja contable", tag: "sheets" },
-          { t: "Te avisamos si algo falla", tag: "alerta" },
-        ],
-      },
+      ventas: [
+        "Entrada de lead",
+        "Calificación automática",
+        "Registro en CRM",
+        "Notificación al equipo",
+      ],
+      soporte: [
+        "Ticket recibido",
+        "Análisis de prioridad",
+        "Asignación de agente",
+        "Respuesta inicial",
+      ],
+      ops: [
+        "Pedido confirmado",
+        "Generación de factura",
+        "Actualización contable",
+        "Alerta de excepción",
+      ],
     };
-
-    var labelEl = demo.querySelector("[data-flow-label]");
     var nodesEl = demo.querySelector("[data-flow-nodes]");
     var tabs = demo.querySelectorAll("[data-flow-tab]");
 
-    function renderScenario(key) {
-      var s = scenarios[key];
-      if (!s || !nodesEl) return;
-      if (labelEl) labelEl.textContent = "ejemplo · " + s.label;
-      nodesEl.innerHTML = s.nodes
-        .map(function (node, i) {
+    function render(key) {
+      var steps = scenarios[key];
+      if (!nodesEl || !steps) return;
+      nodesEl.innerHTML = steps
+        .map(function (text, i) {
           return (
-            '<div class="wf-node" data-step="' +
-            i +
-            '" style="--delay:' +
-            i * 0.12 +
-            's"><span class="wf-dot"></span><span class="wf-text">' +
-            node.t +
-            '</span><span class="mono">' +
-            node.tag +
-            "</span></div>" +
-            (i < s.nodes.length - 1 ? '<div class="wf-connector active"></div>' : "")
+            '<div class="wf-node" style="transition-delay:' +
+            i * 0.08 +
+            's"><span class="wf-dot"></span><span>' +
+            text +
+            '</span><span class="wf-tag">Paso ' +
+            (i + 1) +
+            "</span></div>"
           );
         })
         .join("");
       nodesEl.querySelectorAll(".wf-node").forEach(function (node, idx) {
         setTimeout(function () {
           node.classList.add("is-live");
-        }, 80 + idx * 180);
+        }, 60 + idx * 120);
       });
     }
 
@@ -172,40 +126,22 @@
       tab.addEventListener("click", function () {
         tabs.forEach(function (t) {
           t.classList.remove("is-active");
-          t.setAttribute("aria-selected", "false");
         });
         tab.classList.add("is-active");
-        tab.setAttribute("aria-selected", "true");
-        renderScenario(tab.getAttribute("data-flow-tab"));
+        render(tab.getAttribute("data-flow-tab"));
       });
     });
-
-    renderScenario("ventas");
+    render("ventas");
   }
-
-  document.querySelectorAll(".bento-card").forEach(function (card) {
-    card.addEventListener("mousemove", function (e) {
-      var rect = card.getBoundingClientRect();
-      var x = ((e.clientX - rect.left) / rect.width) * 100;
-      var y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty("--mx", x + "%");
-      card.style.setProperty("--my", y + "%");
-    });
-  });
 
   document.querySelectorAll("[data-faq-trigger]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var item = btn.closest(".faq-item");
-      var wasOpen = item.classList.contains("is-open");
-      document.querySelectorAll(".faq-item.is-open").forEach(function (open) {
-        open.classList.remove("is-open");
-        var t = open.querySelector("[data-faq-trigger]");
-        if (t) t.setAttribute("aria-expanded", "false");
+      var open = item.classList.contains("is-open");
+      document.querySelectorAll(".faq-item.is-open").forEach(function (i) {
+        i.classList.remove("is-open");
       });
-      if (!wasOpen) {
-        item.classList.add("is-open");
-        btn.setAttribute("aria-expanded", "true");
-      }
+      if (!open) item.classList.add("is-open");
     });
   });
 
@@ -214,22 +150,16 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var data = new FormData(form);
-      var subject = encodeURIComponent(
-        "Consultoría Flairven — " + (data.get("company") || "Nuevo lead")
-      );
+      var subject = encodeURIComponent("Consulta Flairven — " + (data.get("company") || "Nuevo contacto"));
       var body = encodeURIComponent(
-        "Nombre: " +
-          data.get("name") +
-          "\nEmpresa: " +
-          data.get("company") +
-          "\nEmail: " +
-          data.get("email") +
-          "\n\nMensaje:\n" +
-          data.get("message")
+        "Nombre: " + data.get("name") +
+          "\nEmpresa: " + data.get("company") +
+          "\nEmail: " + data.get("email") +
+          "\nÁrea: " + data.get("topic") +
+          "\n\nMensaje:\n" + data.get("message")
       );
-      var mail = form.getAttribute("data-email") || "hola@flairven.com";
-      window.location.href =
-        "mailto:" + mail + "?subject=" + subject + "&body=" + body;
+      window.location.href = "mailto:" + (form.getAttribute("data-email") || "hola@flairven.com") +
+        "?subject=" + subject + "&body=" + body;
     });
   }
 })();
