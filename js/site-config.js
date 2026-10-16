@@ -4,34 +4,34 @@
       slug: "servicios",
       title: "Servicios",
       href: "servicios.html",
-      description: "Automatización, integraciones, IA y mantenimiento de flujos.",
+      description: "Lo que hacemos, explicado sin complicaciones.",
     },
     {
       slug: "nosotros",
       title: "Nosotros",
       href: "nosotros.html",
-      description: "Metodología, stack y cómo entregamos proyectos documentados.",
+      description: "Quiénes somos y cómo te tratamos en cada proyecto.",
     },
     {
       slug: "portafolio",
       title: "Casos",
       href: "portafolio.html",
-      description: "Ejemplos de procesos automatizados y resultados medibles.",
+      description: "Historias reales (o de ejemplo) de tiempo recuperado.",
     },
     {
       slug: "contacto",
       title: "Contacto",
       href: "contacto.html",
-      description: "Agenda una consultoría gratuita de 30 minutos.",
+      description: "Escríbenos — respondemos con cariño y claridad.",
     },
   ];
 
   window.FLAIRVEN_SITE = {
     name: "Flairven",
-    tagline: "Automatizaciones interactivas, medibles y bajo tu control.",
+    tagline: "Automatizamos lo repetitivo para que recuperes calma y tiempo.",
     email: "hola@flairven.com",
     phone: "",
-    ctaLabel: "Consultoría gratis",
+    ctaLabel: "Hablemos",
     ctaHref: "contacto.html",
     pages: repoPages.map(function (page) {
       return {

@@ -109,30 +109,30 @@
   if (demo) {
     var scenarios = {
       ventas: {
-        label: "lead_pipeline",
+        label: "ventas",
         nodes: [
-          { t: "Formulario · lead entrante", tag: "webhook" },
-          { t: "Scoring con IA", tag: "gpt-4" },
-          { t: "Deal en HubSpot", tag: "crm" },
-          { t: "Slack al closer", tag: "notify" },
+          { t: "Llega un lead nuevo 🎉", tag: "inicio" },
+          { t: "Lo ordenamos y calificamos", tag: "ia" },
+          { t: "Aparece en tu CRM", tag: "crm" },
+          { t: "Aviso al equipo por Slack", tag: "listo" },
         ],
       },
       soporte: {
-        label: "ticket_triage",
+        label: "soporte",
         nodes: [
-          { t: "Email / chat entrante", tag: "inbox" },
-          { t: "Clasificar urgencia", tag: "ai" },
-          { t: "Asignar agente", tag: "helpdesk" },
-          { t: "SLA + respuesta base", tag: "auto" },
+          { t: "Cliente escribe", tag: "mensaje" },
+          { t: "Vemos qué tan urgente es", tag: "ia" },
+          { t: "Lo asignamos a la persona correcta", tag: "equipo" },
+          { t: "Respuesta base si aplica", tag: "auto" },
         ],
       },
       ops: {
-        label: "invoice_sync",
+        label: "oficina",
         nodes: [
-          { t: "Pedido confirmado", tag: "shop" },
-          { t: "Factura PDF", tag: "drive" },
-          { t: "Contabilidad", tag: "sheets" },
-          { t: "Alerta si falla", tag: "retry" },
+          { t: "Hay un pedido nuevo", tag: "tienda" },
+          { t: "Generamos factura", tag: "pdf" },
+          { t: "Actualizamos la hoja contable", tag: "sheets" },
+          { t: "Te avisamos si algo falla", tag: "alerta" },
         ],
       },
     };
@@ -144,7 +144,7 @@
     function renderScenario(key) {
       var s = scenarios[key];
       if (!s || !nodesEl) return;
-      if (labelEl) labelEl.textContent = "workflow · " + s.label;
+      if (labelEl) labelEl.textContent = "ejemplo · " + s.label;
       nodesEl.innerHTML = s.nodes
         .map(function (node, i) {
           return (
