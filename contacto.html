@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contacta a Flairven — consultoría gratuita de automatización."
+      content="Agenda una sesión estratégica con Flairven. Automatización profesional con plan claro y sin compromiso inicial."
     />
     <title>Contacto | Flairven</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,87 +14,107 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body data-page="contacto.html">
-    <div class="orb-field" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span></div>
+    <div class="orb-field" aria-hidden="true">
+      <span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span>
+    </div>
     <div class="grid-bg" aria-hidden="true"></div>
     <div id="site-header"></div>
 
     <main class="page-main">
-      <header class="page-header">
-        <p class="eyebrow">Contacto</p>
-        <h1>Escríbenos — te leemos con calma ☺</h1>
-        <p class="page-intro">
-          Cuéntanos qué te agobia en el día a día. En 30 minutos (gratis) vemos
-          si podemos ayudarte y cómo, sin presión.
-        </p>
-      </header>
-
-      <div class="contact-layout">
-        <form
-          class="contact-form"
-          id="contact-form"
-          data-email="hola@flairven.com"
-        >
-          <label>
-            Nombre completo
-            <input type="text" name="name" required autocomplete="name" />
-          </label>
-          <label>
-            Empresa
-            <input type="text" name="company" autocomplete="organization" />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" required autocomplete="email" />
-          </label>
-          <label>
-            ¿Qué quieres automatizar?
-            <select name="topic">
-              <option value="ventas">Ventas / CRM</option>
-              <option value="soporte">Soporte / tickets</option>
-              <option value="ops">Operaciones / back-office</option>
-              <option value="marketing">Marketing / reporting</option>
-              <option value="otro">Otro</option>
-            </select>
-          </label>
-          <label>
-            Mensaje
-            <textarea
-              name="message"
-              placeholder="Apps que usas, volumen aproximado, plazos..."
-              required
-            ></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
-          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0">
-            Al enviar se abrirá tu cliente de correo. Pronto puedes conectar
-            este formulario a un flujo n8n en Hostinger.
+      <div class="contact-shell">
+        <div class="contact-value reveal">
+          <p class="eyebrow">Sesión estratégica gratuita</p>
+          <h1>Convierte horas perdidas en procesos que funcionan solos</h1>
+          <p class="contact-lead">
+            En 30 minutos identificamos qué automatizar primero, cuánto puede
+            ahorrarte y el plan concreto para implementarlo — con precio claro
+            antes de empezar.
           </p>
-        </form>
-
-        <aside class="contact-aside">
-          <h2 style="font-size: 1.1rem; margin-top: 0">Qué obtienes</h2>
-          <ul>
-            <li>Mapa rápido del proceso actual</li>
-            <li>2–3 oportunidades de automatización priorizadas</li>
-            <li>Recomendación n8n / Make / Zapier</li>
-            <li>Estimación de esfuerzo y siguiente paso</li>
+          <div class="trust-chips">
+            <span class="trust-chip">30 min · videollamada</span>
+            <span class="trust-chip">Sin compromiso</span>
+            <span class="trust-chip">Respuesta en 24 h</span>
+          </div>
+          <ul class="benefit-cards">
+            <li class="benefit-card">
+              <span class="benefit-icon">01</span>
+              <div>
+                <h3>Diagnóstico de tu operación</h3>
+                <p>Detectamos cuellos de botella y tareas que hoy dependen de personas.</p>
+              </div>
+            </li>
+            <li class="benefit-card">
+              <span class="benefit-icon">02</span>
+              <div>
+                <h3>Prioridades con impacto</h3>
+                <p>Te entregamos 2–3 automatizaciones ordenadas por retorno y facilidad.</p>
+              </div>
+            </li>
+            <li class="benefit-card">
+              <span class="benefit-icon">03</span>
+              <div>
+                <h3>Plan y presupuesto</h3>
+                <p>Herramienta recomendada, plazos realistas y rango de inversión.</p>
+              </div>
+            </li>
           </ul>
-          <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted)">
-            Email directo:
-            <a href="mailto:hola@flairven.com" style="color: var(--cyan)"
-              >hola@flairven.com</a
-            >
+          <p class="contact-direct">
+            Prefieres escribir directo:
+            <a href="mailto:hola@flairven.com">hola@flairven.com</a>
           </p>
-        </aside>
+        </div>
+
+        <div class="contact-form-card reveal" style="--reveal-delay: 0.1s">
+          <h2>Solicitar sesión</h2>
+          <p class="form-sub">Completa el formulario y te contactamos para agendar.</p>
+          <form class="contact-form" id="contact-form" data-email="hola@flairven.com">
+            <div class="form-row">
+              <label>
+                Nombre
+                <input type="text" name="name" required autocomplete="name" placeholder="Tu nombre" />
+              </label>
+              <label>
+                Empresa
+                <input type="text" name="company" autocomplete="organization" placeholder="Nombre de tu negocio" />
+              </label>
+            </div>
+            <label>
+              Email profesional
+              <input type="email" name="email" required autocomplete="email" placeholder="tu@empresa.com" />
+            </label>
+            <label>
+              Área a automatizar
+              <select name="topic">
+                <option value="ventas">Ventas y CRM</option>
+                <option value="soporte">Atención al cliente</option>
+                <option value="ops">Operaciones internas</option>
+                <option value="marketing">Marketing y reportes</option>
+                <option value="otro">Otro proceso</option>
+              </select>
+            </label>
+            <label>
+              Cuéntanos tu situación
+              <textarea
+                name="message"
+                required
+                placeholder="¿Qué proceso te quita más tiempo hoy? ¿Qué herramientas usas?"
+              ></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary btn-glow">Agendar sesión gratuita</button>
+            <p class="form-note">
+              Al enviar, se abrirá tu correo con el mensaje listo para enviarnos.
+            </p>
+          </form>
+        </div>
       </div>
     </main>
 
     <div id="site-footer"></div>
-    <script src="js/site-config.js"></script>
-    <script src="js/layout.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/site-config.js"></script>
+    <script src="/js/layout.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

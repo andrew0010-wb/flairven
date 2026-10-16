@@ -28,10 +28,10 @@
 
   window.FLAIRVEN_SITE = {
     name: "Flairven",
-    tagline: "Automatizamos lo repetitivo para que recuperes calma y tiempo.",
+    tagline: "Automatización profesional con resultados medibles y propiedad total del cliente.",
     email: "hola@flairven.com",
     phone: "",
-    ctaLabel: "Hablemos",
+    ctaLabel: "Agendar sesión",
     ctaHref: "contacto.html",
     pages: repoPages.map(function (page) {
       return {
