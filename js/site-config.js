@@ -29,10 +29,10 @@
   window.FLAIRVEN_SITE = {
     name: "Flairven",
     tagline:
-      "Agencia de automatización. Diseñamos flujos confiables para equipos que necesitan escalar operaciones.",
+      "Hacemos que las tareas repetidas de tu negocio se hagan solas, sin que tengas que aprender tecnología.",
     email: "hola@flairven.com",
     phone: "",
-    ctaLabel: "Agendar sesión",
+    ctaLabel: "Charla gratis",
     ctaHref: "contacto.html",
     pages: repoPages.map(function (page) {
       return {

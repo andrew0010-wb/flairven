@@ -86,22 +86,22 @@
   if (demo) {
     var scenarios = {
       ventas: [
-        "Entrada de lead",
-        "Calificación automática",
-        "Registro en CRM",
-        "Notificación al equipo",
+        "Alguien deja sus datos",
+        "Se ordena si vale la pena llamarlo",
+        "Aparece en tu lista de clientes",
+        "Tu equipo recibe un aviso",
       ],
       soporte: [
-        "Ticket recibido",
-        "Análisis de prioridad",
-        "Asignación de agente",
-        "Respuesta inicial",
+        "Llega un mensaje de un cliente",
+        "Se ve qué tan urgente es",
+        "Se asigna a la persona correcta",
+        "Sale una primera respuesta",
       ],
       ops: [
-        "Pedido confirmado",
-        "Generación de factura",
-        "Actualización contable",
-        "Alerta de excepción",
+        "Entra un pedido",
+        "Se crea la factura",
+        "Se anota en tus cuentas",
+        "Te avisamos si algo no cuadra",
       ],
     };
     var nodesEl = demo.querySelector("[data-flow-nodes]");
@@ -146,20 +146,20 @@
   if (journey) {
     var journeySteps = [
       {
-        title: "Diagnóstico",
-        text: "En 30 minutos revisamos qué tarea se repite, qué herramientas usas y qué conviene automatizar primero.",
+        title: "Te escuchamos",
+        text: "En media hora nos cuentas qué repites cada día. De ahí sale lo que más te conviene automatizar primero.",
       },
       {
-        title: "Propuesta",
-        text: "Recibes alcance, herramienta recomendada, plazos y un precio cerrado antes de construir.",
+        title: "Te decimos el plan",
+        text: "Te explicamos qué haremos, en cuánto tiempo y cuánto cuesta. Nada empieza sin que lo apruebes.",
       },
       {
-        title: "Implementación",
-        text: "Construimos el flujo, lo probamos contigo y dejamos alertas cuando algo falla.",
+        title: "Lo armamos",
+        text: "Lo construimos, lo pruebas con nosotros y te avisamos si en algún momento deja de funcionar.",
       },
       {
-        title: "Entrega",
-        text: "El sistema queda en tu cuenta, con una guía corta para que tu equipo lo opere.",
+        title: "Queda en tus manos",
+        text: "El proceso queda en tus cuentas, con una guía corta para que tu equipo sepa usarlo.",
       },
     ];
     var panel = journey.querySelector("[data-journey-panel]");
@@ -184,9 +184,9 @@
   var audience = document.querySelector("[data-audience]");
   if (audience) {
     var profiles = {
-      ventas: "Conectamos formularios, CRM y WhatsApp para que ningún lead se quede sin seguimiento.",
-      soporte: "Clasificamos tickets, asignamos al equipo correcto y dejamos una primera respuesta lista.",
-      finanzas: "Pasamos pedidos, facturas y conciliaciones a un flujo con alertas cuando algo no cuadra.",
+      ventas: "Cuando alguien escribe o llena un formulario, su dato llega solo a tu lista y tu equipo recibe el aviso. Nadie se pierde por olvidar copiarlo.",
+      soporte: "Los mensajes se ordenan por urgencia y llegan a la persona correcta, con una primera respuesta lista para revisar.",
+      finanzas: "El pedido, la factura y el registro de cuentas se actualizan juntos. Si algo no coincide, te llega una alerta.",
     };
     var audiencePanel = audience.querySelector("[data-audience-panel]");
     var audienceButtons = audience.querySelectorAll("[data-audience-key]");
