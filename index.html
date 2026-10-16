@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Flairven — Página de inicio oficial. Accede a todas las secciones del sitio."
+      content="Flairven — Agencia de automatización. Diseñamos flujos en n8n, Make y Zapier para ahorrar tiempo, reducir errores y escalar operaciones."
     />
-    <title>Flairven | Inicio</title>
+    <title>Flairven | Automatizaciones para tu negocio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -19,104 +19,235 @@
   <body data-page="index.html">
     <div class="bg-glow" aria-hidden="true"></div>
     <div class="noise" aria-hidden="true"></div>
-
     <div id="site-header"></div>
 
     <main>
-      <section class="hero hero-home" id="inicio">
-        <div class="hero-inner">
-          <p class="hero-badge">Página principal</p>
-          <h1>Flairven</h1>
+      <section class="hero-split" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow">Agencia de automatización</p>
+          <h1>
+            Deja que los flujos trabajen por ti con
+            <span class="gradient">Flairven</span>
+          </h1>
           <p class="hero-lead">
-            Punto de entrada de tu presencia digital. Desde aquí accedes a cada
-            área del sitio con una experiencia clara, coherente y profesional.
+            Diseñamos, implementamos y mantenemos automatizaciones entre CRM,
+            hojas de cálculo, email, WhatsApp e IA. Menos tareas manuales, más
+            control y entregables documentados en tu cuenta.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#secciones">Explorar secciones</a>
-            <a class="btn btn-ghost" href="contacto.html">Contacto</a>
+            <a class="btn btn-primary" href="contacto.html">Consultoría gratis</a>
+            <a class="btn btn-ghost" href="servicios.html">Ver servicios</a>
+          </div>
+          <ul class="hero-bullets">
+            <li>Alcance y precio por escrito antes de construir</li>
+            <li>Manejo de errores, logs y reintentos incluidos</li>
+            <li>Tú eres dueño de cada flujo y credencial</li>
+          </ul>
+        </div>
+        <div class="workflow-panel" aria-hidden="true">
+          <p class="workflow-label">workflow · lead_to_crm_v2</p>
+          <div class="workflow-nodes">
+            <div class="wf-node">
+              <span class="wf-dot"></span>
+              Formulario web · nuevo lead
+              <span class="mono">trigger</span>
+            </div>
+            <div class="wf-connector"></div>
+            <div class="wf-node">
+              <span class="wf-dot"></span>
+              Enriquecer con IA · calificar
+              <span class="mono">openai</span>
+            </div>
+            <div class="wf-connector"></div>
+            <div class="wf-node">
+              <span class="wf-dot"></span>
+              Crear deal · notificar Slack
+              <span class="mono">crm</span>
+            </div>
+            <div class="wf-connector"></div>
+            <div class="wf-node">
+              <span class="wf-dot"></span>
+              Email de bienvenida · secuencia
+              <span class="mono">send</span>
+            </div>
           </div>
         </div>
-        <ul class="hero-stats" aria-label="Resumen">
-          <li>
-            <strong data-hub-count>4</strong>
-            <span>Secciones activas</span>
-          </li>
-          <li>
-            <strong>24/7</strong>
-            <span>Disponible en la web</span>
-          </li>
-          <li>
-            <strong>100%</strong>
-            <span>Enfoque profesional</span>
-          </li>
-        </ul>
       </section>
 
-      <section class="section section-hub" id="secciones">
+      <section class="logo-strip">
+        <p>Stack que dominamos</p>
+        <div class="logo-badges">
+          <span class="badge">n8n</span>
+          <span class="badge">Make</span>
+          <span class="badge">Zapier</span>
+          <span class="badge">OpenAI</span>
+          <span class="badge">Google Workspace</span>
+          <span class="badge">HubSpot</span>
+          <span class="badge">Notion</span>
+          <span class="badge">APIs REST</span>
+        </div>
+      </section>
+
+      <section class="section" id="servicios-preview">
         <div class="section-head">
-          <p class="eyebrow">Navegación</p>
-          <h2 class="section-title">Accede a las secciones del sitio</h2>
-          <p class="section-sub section-sub-wide">
-            Enlaces directos a cada página del sitio publicada en este
-            repositorio.
+          <p class="eyebrow" style="justify-content: center">Qué hacemos</p>
+          <h2 class="section-title">Automatización con estándar de agencia</h2>
+          <p class="section-sub">
+            Inspirado en las mejores prácticas del sector: procesos claros,
+            métricas y handover que tu equipo puede operar.
           </p>
         </div>
-        <div class="hub-grid" id="hub-pages"></div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Flujos operativos</h3>
+            <p>
+              Ventas, soporte, facturación y onboarding conectados entre
+              herramientas que ya usas.
+            </p>
+            <a class="card-link" href="servicios.html#flujos">Detalle →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">🤖</div>
+            <h3>IA aplicada</h3>
+            <p>
+              Clasificación de leads, respuestas asistidas, extracción de datos
+              y resúmenes con reglas y auditoría.
+            </p>
+            <a class="card-link" href="servicios.html#ia">Detalle →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">🔗</div>
+            <h3>Integraciones a medida</h3>
+            <p>
+              APIs, webhooks y bases de datos cuando no existe conector
+              nativo.
+            </p>
+            <a class="card-link" href="servicios.html#integraciones">Detalle →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">🛡</div>
+            <h3>Soporte y evolución</h3>
+            <p>
+              Monitoreo, optimización de costos de ejecución y mejoras
+              continuas bajo retainer opcional.
+            </p>
+            <a class="card-link" href="servicios.html#soporte">Detalle →</a>
+          </article>
+        </div>
       </section>
 
-      <section class="section section-trust">
-        <div class="trust-panel">
-          <div class="trust-copy">
-            <p class="eyebrow">Compromiso</p>
-            <h2>Diseño pensado para crecer contigo</h2>
+      <section class="section">
+        <div class="section-head">
+          <p class="eyebrow" style="justify-content: center">Proceso</p>
+          <h2 class="section-title">De la idea al handover en cuatro pasos</h2>
+        </div>
+        <div class="process-grid">
+          <article class="step">
+            <p class="step-num">01 · Discovery</p>
+            <h3>Mapa del proceso</h3>
             <p>
-              Esta portada centraliza la navegación hacia todas las secciones
-              del proyecto: mismo encabezado, pie de página y estilo en cada
-              página.
+              Entendemos volumen, apps, riesgos y ROI estimado en una sesión
+              estructurada.
             </p>
+          </article>
+          <article class="step">
+            <p class="step-num">02 · Blueprint</p>
+            <h3>Diseño del flujo</h3>
+            <p>
+              Diagrama, herramienta elegida (n8n, Make o Zapier) y criterios de
+              éxito acordados.
+            </p>
+          </article>
+          <article class="step">
+            <p class="step-num">03 · Build</p>
+            <h3>Implementación</h3>
+            <p>
+              Construcción con manejo de errores, pruebas en staging y demos
+              intermedias.
+            </p>
+          </article>
+          <article class="step">
+            <p class="step-num">04 · Handover</p>
+            <h3>Documentación</h3>
+            <p>
+              Manual, credenciales en tu cuenta y opción de retainer para
+              monitoreo.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="metrics" aria-label="Resultados típicos">
+          <div class="metric">
+            <strong>70%</strong>
+            <span>Menos tiempo en tareas repetitivas</span>
           </div>
-          <ul class="trust-list">
-            <li>
-              <span class="trust-icon" aria-hidden="true">01</span>
-              <div>
-                <strong>Estructura clara</strong>
-                <p>Los visitantes encuentran cada área en segundos.</p>
-              </div>
-            </li>
-            <li>
-              <span class="trust-icon" aria-hidden="true">02</span>
-              <div>
-                <strong>Compatible con Hostinger</strong>
-                <p>HTML estático listo para public_html.</p>
-              </div>
-            </li>
-            <li>
-              <span class="trust-icon" aria-hidden="true">03</span>
-              <div>
-                <strong>Fácil de mantener</strong>
-                <p>Un solo lugar para gestionar enlaces y menús.</p>
-              </div>
-            </li>
-          </ul>
+          <div class="metric">
+            <strong>2–4 sem</strong>
+            <span>Primer flujo en producción</span>
+          </div>
+          <div class="metric">
+            <strong>100%</strong>
+            <span>Propiedad en tu cuenta</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button type="button" data-faq-trigger aria-expanded="false">
+              ¿n8n, Make o Zapier?
+            </button>
+            <div class="faq-answer">
+              Elegimos por proceso: volumen, complejidad, quién mantiene el
+              flujo y si los datos deben quedarse en tu infraestructura. La
+              decisión queda documentada en el blueprint.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" data-faq-trigger aria-expanded="false">
+              ¿Cuánto cuesta un proyecto?
+            </button>
+            <div class="faq-answer">
+              Un flujo puntual suele ir desde proyectos pequeños; sistemas con
+              varios escenarios conectados requieren alcance mayor. Siempre
+              cotizamos por escrito antes de desarrollar.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" data-faq-trigger aria-expanded="false">
+              ¿Qué recibo al final?
+            </button>
+            <div class="faq-answer">
+              Flujos en tu cuenta, documentación de triggers y pasos, manejo de
+              fallos configurado y sesión de traspaso con tu equipo.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-band">
+          <h2>¿Listo para automatizar lo repetitivo?</h2>
+          <p>
+            Reserva una consultoría de 30 minutos. Te decimos qué conviene
+            automatizar primero, cuánto puede ahorrar y el siguiente paso
+            concreto.
+          </p>
+          <a class="btn btn-primary" href="contacto.html">Agendar consultoría</a>
         </div>
       </section>
     </main>
 
     <div id="site-footer"></div>
-
     <script src="js/site-config.js"></script>
     <script src="js/layout.js"></script>
     <script src="js/main.js"></script>
-    <script>
-      (function () {
-        var site = window.FLAIRVEN_SITE;
-        if (!site) return;
-        var count = site.pages.filter(function (p) {
-          return p.featured;
-        }).length;
-        var el = document.querySelector("[data-hub-count]");
-        if (el) el.textContent = String(count);
-      })();
-    </script>
   </body>
 </html>

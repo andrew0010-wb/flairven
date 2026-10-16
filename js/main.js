@@ -1,12 +1,7 @@
 (function () {
-  var site = window.FLAIRVEN_SITE;
-
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.querySelector(".nav");
-
   function bindNavToggle() {
-    toggle = document.querySelector(".nav-toggle");
-    nav = document.querySelector(".nav");
+    var toggle = document.querySelector(".nav-toggle");
+    var nav = document.querySelector(".nav");
     if (!toggle || !nav) return;
 
     toggle.addEventListener("click", function () {
@@ -25,38 +20,43 @@
 
   bindNavToggle();
 
-  var hubGrid = document.getElementById("hub-pages");
-  if (hubGrid && site && site.pages) {
-    var featured = site.pages.filter(function (p) {
-      return p.featured;
-    });
-
-    hubGrid.innerHTML = featured
-      .map(function (page) {
-        return (
-          '<a class="hub-card" href="' +
-          page.href +
-          '">' +
-          '<span class="hub-card-label">Sección</span>' +
-          "<h3>" +
-          page.title +
-          "</h3>" +
-          "<p>" +
-          page.description +
-          "</p>" +
-          '<span class="hub-card-arrow" aria-hidden="true">→</span>' +
-          "</a>"
-        );
-      })
-      .join("");
-  }
-
-  var observer = new MutationObserver(function () {
-    bindNavToggle();
-  });
-
   var headerRoot = document.getElementById("site-header");
   if (headerRoot) {
-    observer.observe(headerRoot, { childList: true, subtree: true });
+    new MutationObserver(bindNavToggle).observe(headerRoot, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  document.querySelectorAll("[data-faq-trigger]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.closest(".faq-item");
+      var open = item.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  var form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var subject = encodeURIComponent(
+        "Consultoría Flairven — " + (data.get("company") || "Nuevo lead")
+      );
+      var body = encodeURIComponent(
+        "Nombre: " +
+          data.get("name") +
+          "\nEmpresa: " +
+          data.get("company") +
+          "\nEmail: " +
+          data.get("email") +
+          "\n\nMensaje:\n" +
+          data.get("message")
+      );
+      var mail = form.getAttribute("data-email") || "hola@flairven.com";
+      window.location.href =
+        "mailto:" + mail + "?subject=" + subject + "&body=" + body;
+    });
   }
 })();

@@ -1,43 +1,38 @@
-/**
- * Páginas del repositorio (raíz del proyecto):
- * index.html → inicio (no se lista aquí)
- * nosotros.html, servicios.html, portafolio.html, contacto.html
- *
- * Al añadir un nuevo .html al repo, agrega una entrada en repoPages.
- */
 (function () {
   var repoPages = [
-    {
-      slug: "nosotros",
-      title: "Nosotros",
-      href: "nosotros.html",
-      description: "Historia, misión y el equipo detrás de Flairven.",
-    },
     {
       slug: "servicios",
       title: "Servicios",
       href: "servicios.html",
-      description: "Catálogo de servicios y propuesta de valor.",
+      description: "Automatización, integraciones, IA y mantenimiento de flujos.",
+    },
+    {
+      slug: "nosotros",
+      title: "Nosotros",
+      href: "nosotros.html",
+      description: "Metodología, stack y cómo entregamos proyectos documentados.",
     },
     {
       slug: "portafolio",
-      title: "Portafolio",
+      title: "Casos",
       href: "portafolio.html",
-      description: "Proyectos, casos de éxito y trabajos recientes.",
+      description: "Ejemplos de procesos automatizados y resultados medibles.",
     },
     {
       slug: "contacto",
       title: "Contacto",
       href: "contacto.html",
-      description: "Canales directos para cotizaciones y soporte.",
+      description: "Agenda una consultoría gratuita de 30 minutos.",
     },
   ];
 
   window.FLAIRVEN_SITE = {
     name: "Flairven",
-    tagline: "Soluciones con estándares profesionales",
+    tagline: "Automatizaciones inteligentes para equipos que quieren escalar sin fricción.",
     email: "hola@flairven.com",
     phone: "",
+    ctaLabel: "Consultoría gratis",
+    ctaHref: "contacto.html",
     pages: repoPages.map(function (page) {
       return {
         slug: page.slug,
