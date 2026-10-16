@@ -1,0 +1,12 @@
+{
+  "name": "flairven",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web estático Flairven",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
+}

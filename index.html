@@ -5,133 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Flairven — experiencias con estilo. Tu espacio digital en Hostinger."
+      content="Flairven — Página de inicio oficial. Accede a todas las secciones del sitio."
     />
-    <title>Flairven</title>
+    <title>Flairven | Inicio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="index.html">
     <div class="bg-glow" aria-hidden="true"></div>
     <div class="noise" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="logo" href="#">Flair<span>ven</span></a>
-        <button
-          type="button"
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="main-nav"
-        >
-          Menú
-        </button>
-        <nav id="main-nav">
-          <ul class="nav">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div id="site-header"></div>
 
     <main>
-      <section class="hero" id="inicio">
-        <p class="hero-badge">Bienvenido</p>
-        <h1>Donde el <em>flair</em> encuentra su lugar</h1>
-        <p class="hero-lead">
-          Flairven es tu nueva presencia en la web. Diseño cuidado, listo para
-          crecer contigo en Hostinger.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contacto">Empezar</a>
-          <a class="btn btn-ghost" href="#servicios">Ver más</a>
-        </div>
-      </section>
-
-      <section class="section" id="nosotros">
-        <h2 class="section-title">Quiénes somos</h2>
-        <p class="section-sub">
-          Un punto de partida elegante para tu marca. Personaliza textos,
-          colores e imágenes cuando quieras.
-        </p>
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">✦</div>
-            <h3>Identidad</h3>
-            <p>
-              Una base visual coherente para que tu proyecto se vea profesional
-              desde el primer día.
-            </p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">◇</div>
-            <h3>Rendimiento</h3>
-            <p>
-              HTML, CSS y JavaScript ligeros: carga rápida en cualquier
-              dispositivo y hosting compartido.
-            </p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">○</div>
-            <h3>Control</h3>
-            <p>
-              Código claro en GitHub y despliegue sencillo subiendo archivos a
-              public_html en Hostinger.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="servicios">
-        <h2 class="section-title">Servicios</h2>
-        <p class="section-sub">
-          Sustituye estos bloques por lo que realmente ofrece Flairven.
-        </p>
-        <div class="cards">
-          <article class="card">
-            <h3>Consultoría</h3>
-            <p>Define tu mensaje y la estructura de tu sitio.</p>
-          </article>
-          <article class="card">
-            <h3>Diseño web</h3>
-            <p>Páginas a medida que reflejen tu estilo.</p>
-          </article>
-          <article class="card">
-            <h3>Soporte</h3>
-            <p>Actualizaciones y mejoras cuando las necesites.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="contacto">
-        <div class="cta">
-          <h2>Hablemos</h2>
-          <p class="section-sub" style="margin-bottom: 1.5rem">
-            Añade aquí tu correo, WhatsApp o formulario de contacto.
+      <section class="hero hero-home" id="inicio">
+        <div class="hero-inner">
+          <p class="hero-badge">Página principal</p>
+          <h1>Flairven</h1>
+          <p class="hero-lead">
+            Punto de entrada de tu presencia digital. Desde aquí accedes a cada
+            área del sitio con una experiencia clara, coherente y profesional.
           </p>
-          <a class="btn btn-primary" href="mailto:hola@flairven.com"
-            >hola@flairven.com</a
-          >
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#secciones">Explorar secciones</a>
+            <a class="btn btn-ghost" href="contacto.html">Contacto</a>
+          </div>
+        </div>
+        <ul class="hero-stats" aria-label="Resumen">
+          <li>
+            <strong data-hub-count>4</strong>
+            <span>Secciones activas</span>
+          </li>
+          <li>
+            <strong>24/7</strong>
+            <span>Disponible en la web</span>
+          </li>
+          <li>
+            <strong>100%</strong>
+            <span>Enfoque profesional</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section section-hub" id="secciones">
+        <div class="section-head">
+          <p class="eyebrow">Navegación</p>
+          <h2 class="section-title">Accede a las secciones del sitio</h2>
+          <p class="section-sub section-sub-wide">
+            Enlaces directos a cada página del sitio publicada en este
+            repositorio.
+          </p>
+        </div>
+        <div class="hub-grid" id="hub-pages"></div>
+      </section>
+
+      <section class="section section-trust">
+        <div class="trust-panel">
+          <div class="trust-copy">
+            <p class="eyebrow">Compromiso</p>
+            <h2>Diseño pensado para crecer contigo</h2>
+            <p>
+              Esta portada centraliza la navegación hacia todas las secciones
+              del proyecto: mismo encabezado, pie de página y estilo en cada
+              página.
+            </p>
+          </div>
+          <ul class="trust-list">
+            <li>
+              <span class="trust-icon" aria-hidden="true">01</span>
+              <div>
+                <strong>Estructura clara</strong>
+                <p>Los visitantes encuentran cada área en segundos.</p>
+              </div>
+            </li>
+            <li>
+              <span class="trust-icon" aria-hidden="true">02</span>
+              <div>
+                <strong>Compatible con Hostinger</strong>
+                <p>HTML estático listo para public_html.</p>
+              </div>
+            </li>
+            <li>
+              <span class="trust-icon" aria-hidden="true">03</span>
+              <div>
+                <strong>Fácil de mantener</strong>
+                <p>Un solo lugar para gestionar enlaces y menús.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <span>© <span id="year"></span> Flairven. Todos los derechos reservados.</span>
-      <span>Hecho para Hostinger</span>
-    </footer>
+    <div id="site-footer"></div>
 
+    <script src="js/site-config.js"></script>
+    <script src="js/layout.js"></script>
     <script src="js/main.js"></script>
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      (function () {
+        var site = window.FLAIRVEN_SITE;
+        if (!site) return;
+        var count = site.pages.filter(function (p) {
+          return p.featured;
+        }).length;
+        var el = document.querySelector("[data-hub-count]");
+        if (el) el.textContent = String(count);
+      })();
     </script>
   </body>
 </html>
